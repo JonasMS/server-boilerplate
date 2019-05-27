@@ -8,7 +8,7 @@ NODE_ENV=development
 Set up a `config.json` file:
 ```
 {
-	"development": {
+	"dev": {
 		"username": "postgres",
 		"password": null,
 		"database": "",

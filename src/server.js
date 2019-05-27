@@ -30,7 +30,7 @@ db.sequelize.sync().then(() => {
         .use(bodyParser.json({ limit: '50mb' }))
         .use((req, res, next) => {
             /* redirect http request to https */
-            if (process.env.NODE_ENV !== 'development' && (req.get('X-Forwarded-Proto') === 'http')) {
+            if (process.env.NODE_ENV !== 'dev' && (req.get('X-Forwarded-Proto') === 'http')) {
                 res.redirect(`https://${req.get('Host')}${req.url}`);
             } else {
                 next();
